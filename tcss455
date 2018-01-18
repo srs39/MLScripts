@@ -1,0 +1,16 @@
+#!/bin/bash
+
+INPUT_DIR=""
+OUTPUT_DIR=""
+
+# take 2 args, in and out
+
+while getopts "i:o:" opt; do
+  case "$opt" in
+    i)
+      INPUT_DIR=$OPTARG;;
+    o)
+      OUTPUT_DIR=$OPTARG;;
+  esac
+done
+python3 "./baseline_script.py" $INPUT_DIR $OUTPUT_DIR
